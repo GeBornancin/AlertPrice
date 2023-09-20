@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerta de Preços</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Cotação de moedas</a></li>
+        
+      </ul>
+    </header>
+  </div>
+  <div class="mx-auto" style="width: 1000px;">
+  <table class="table border rounded">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Moeda</th>
+        <th scope="col">Preço</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"></th>
+        <td ><img src="currency-btc.png" alt="bitcoinimagen"></td>
+        <td id="realPriceBtc"></td>
+        <td id="bgRowBtc">
+          <div class="input-group w-50" >
+            <input type="text" id="inputPriceAlertBtcHigh"  class="form-control " placeholder="High" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertBtcHigh"  onclick="savePriceAlertBtcHigh()" type="button" id="button-addon2">Salvar</button>
+            <input type="text" id="inputPriceAlertBtcLow" class="form-control " placeholder="Low" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertBtcLow" onclick="savePriceAlertBtcLow()" type="button" id="button-addon2">Salvar</button>
+            <audio id="alertAudioBtcHigh" src="btcExplodiu.mp3" autoplay muted></audio>
+            <audio id="alertAudioBtcLow" src="btcCrash.mp3" autoplay muted></audio>
+          </div>     
+        </td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td><img src="currency-eth.png" alt="ethereumimagen"></td>
+        <td id="realPriceEth"></td>
+        <td id="bgRowEth">
+          <div class="input-group w-50" >
+            <input type="text" id="inputPriceAlertEthHigh"  class="form-control " placeholder="High" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertEthHigh"  onclick="savePriceAlertEthHigh()" type="button" id="button-addon2">Salvar</button>
+            <input type="text" id="inputPriceAlertEthLow" class="form-control " placeholder="Low" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertEthLow" onclick="savePriceAlertEthLow()" type="button" id="button-addon2">Salvar</button>
+            <audio id="alertAudioEthHigh" src="ethExplodiu.mp3" autoplay muted></audio>
+            <audio id="alertAudioEthLow" src="ethCrash.mp3" autoplay muted></audio>
+          </div>     
+        </td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td><img class="dogeImage" src="currency-doge.png" alt="dogecoinimagen"></td>
+        <td id="realPriceDoge"></td>
+        <td id="bgRowDoge">
+          <div class="input-group w-50" >
+            <input type="text" id="inputPriceAlertDogeHigh"  class="form-control " placeholder="High" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertDogeHigh"  onclick="savePriceAlertDogeHigh()" type="button" id="button-addon2">Salvar</button>
+            <input type="text" id="inputPriceAlertDogeLow" class="form-control " placeholder="Low" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertDogeLow" onclick="savePriceAlertDogeLow()" type="button" id="button-addon2">Salvar</button>
+            <audio id="alertAudioDogeHigh" src="dogeExplodiu.mp3" autoplay muted></audio>
+            <audio id="alertAudioDogeLow" src="dogeCrash.mp3" autoplay muted></audio>
+          </div>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td><img class="ltcImage" src="currency-ltc.png" alt="litecoinimagen"></td>
+        <td id="realPriceLtc"></td>
+        <td id="bgRowLtc">
+          <div class="input-group w-50" >
+            <input type="text" id="inputPriceAlertLtcHigh"  class="form-control " placeholder="High" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertLtcHigh"  onclick="savePriceAlertLtcHigh()" type="button" id="button-addon2">Salvar</button>
+            <input type="text" id="inputPriceAlertLtcLow" class="form-control " placeholder="Low" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertLtcLow" onclick="savePriceAlertLtcLow()" type="button" id="button-addon2">Salvar</button>
+            <audio id="alertAudioLtcHigh" src="ltcExplodiu.mp3" autoplay muted></audio>
+            <audio id="alertAudioLtcLow" src="ltcCrash.mp3" autoplay muted></audio>
+          </div>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td><img  class="xrpImage" src="currency-xrp.png" alt="rippleimagen"></td>
+        <td id="realPriceXrp"></td>
+        <td id="bgRowXrp">
+          <div class="input-group w-50" >
+            <input type="text" id="inputPriceAlertXrpHigh"  class="form-control " placeholder="High" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertXrpHigh"  onclick="savePriceAlertXrpHigh()" type="button" id="button-addon2">Salvar</button>
+            <input type="text" id="inputPriceAlertXrpLow" class="form-control " placeholder="Low" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-info" id="btPriceAlertXrpLow" onclick="savePriceAlertXrpLow()" type="button" id="button-addon2">Salvar</button>
+            <audio id="alertAudioXrpHigh" src="xrpExplodiu.mp3" autoplay muted></audio>
+            <audio id="alertAudioXrpLow" src="xrpCrash.mp3" autoplay muted></audio>
+          </div>
+      </tr>
+      
+      
+    
+    </tbody>
+  </table>
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="alertPrice.js"></script>
+</body>
+</html>

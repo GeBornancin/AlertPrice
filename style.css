@@ -1,0 +1,32 @@
+body{
+  background-color: rgba(128, 128, 128, 0.243);
+}
+.btc{
+  max-width: 50px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+}
+
+.ltcImage{
+  max-width: 50px;
+  max-height: 45px;
+  width: auto;
+  height: auto;
+}
+
+.dogeImage{
+    max-width: 50px;
+    max-height: 45px;
+    width: auto;
+    height: auto;
+  
+}
+
+.xrpImage{
+    max-width: 50px;
+    max-height: 45px;
+    width: auto;
+    height: auto;
+  
+}
